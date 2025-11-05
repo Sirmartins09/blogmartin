@@ -1,0 +1,722 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* --- Variables de Color --- */
+:root {
+    --color-primary: #146b41;
+    --color-secondary: #1CB698;
+    --color-accent: #e4405f; /* Para el icono de Instagram */
+    --color-dark: #333;
+    --color-light: #f4f4f4;
+    --color-white: #fff;
+    --color-gray: #666;
+    --color-border: #ddd;
+}
+
+/* --- Base --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+/* --- Estilos Reutilizables --- */
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: #0e4c29;
+    transform: translateY(-2px);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+/* --- Header y Navegación --- */
+.header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--color-white);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.75rem;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+/* --- Sección Principal (Hero) --- */
+.hero {
+    background: linear-gradient(rgba(20, 107, 65, 0.8), rgba(20, 107, 65, 0.8)), url('../img/baner.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+.hero-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.hero-img img {
+width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--color-secondary);
+    object-fit: contain; /* CAMBIO CLAVE: Cambiamos 'cover' por 'contain' */
+    object-position: center; /* Aseguramos que se centre */
+    background-color: white; /* Añadimos un fondo blanco para evitar espacios transparentes */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.social-links a {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+}
+
+/* --- Artículos --- */
+.post {
+    background-color: var(--color-white);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post-title {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-date {
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 1rem;
+}
+
+.post-excerpt {
+    margin-bottom: 1.5rem;
+}
+
+.post-actions {
+      display: flex;
+    gap: 1rem; /* Espacio entre los botones */
+    align-items: center;
+}
+
+.like-button,
+.btn-primary { /* CAMBIO CLAVE: Agrupamos ambos selectores */
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none; /* Asegura que el enlace se vea como botón */
+    
+    /* CAMBIO CLAVE: Usa flex-grow para que ocupen el mismo espacio */
+    flex: 1;
+}
+
+.like-button {
+    background-color:var(--color-primary);
+    color: var(--color-white);
+    transition: background-color 0.3s ease;
+}
+
+.like-button:hover {
+    background-color: #0e4c29;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0e4c29;
+    transform: translateY(-2px);
+}
+
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--color-white);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-secondary);
+}
+/* --- Estilos para la página de Artículos --- */
+
+/* Contenedor principal del artículo */
+.blog-post {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h1 {
+    font-size: 3rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.blog-post h2 {
+    font-size: 2rem;
+    color: var(--color-dark);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--color-secondary);
+    padding-left: 1rem;
+}
+
+.blog-post p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.blog-post ul {
+    margin: 1.5rem 0 1.5rem 2rem;
+    list-style-type: disc;
+    color: #555;
+}
+
+.blog-post li {
+    margin-bottom: 0.75rem;
+}
+
+.blog-post em {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.highlight-red {
+    color: #c0392b;
+    font-weight: 700;
+}
+
+.highlight-green {
+    color: #27ae60;
+    font-weight: 700;
+}
+
+
+/* --- Sección de Contacto Simplificada --- */
+/* --- Sección de Contacto (Solo Email) --- */
+.contact-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.contact-email-info {
+    background-color: var(--color-white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-email-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.contact-email-info a {
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+
+/* --- Estilos PAGINA ARTICULOS --- */
+/* --- Estilos para la página de Artículos (listado) --- */
+
+.page-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    font-family: 'Playfair Display', serif;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.article-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden; /* Para que la imagen no se salga de los bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.article-link {
+    display: block;
+}
+
+.article-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Recorta la imagen para que siempre cubra el espacio */
+}
+
+.card-content {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+}
+
+.article-excerpt {
+    font-size: 1rem;
+    color: var(--color-gray);
+    margin-bottom: 1rem;
+}
+
+.read-more-link {
+    font-weight: 600;
+    color: var(--color-secondary);
+    transition: color 0.3s ease;
+}
+
+.article-link:hover .read-more-link {
+    color: var(--color-primary);
+}
+
+.entretenida {
+  text-align: center;
+}
+
+.entretenida img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+
+/* --- Estilos para la página de Fotos y Videos --- */
+
+.content {
+    max-width: 600px;
+    margin: 0 auto; /* Centra el contenido */
+}
+
+h1, p {
+    text-align: center;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.post img, .post video {
+    width: 100%;
+    display: block;
+}
+
+.post-actions {
+    padding: 10px;
+    text-align: right; /* Alinea el botón a la derecha */
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ff0000; /* Color gris para el corazón sin 'me gusta' */
+    transition: color 0.2s ease;
+}
+
+.like-btn:hover {
+    color: #e74c3c; /* Color rojo al pasar el mouse */
+}
+
+/* Clase para cuando el botón está activo (con 'me gusta') */
+.like-btn.liked {
+    color: #e74c3c;
+}
+
+/* Cambiar el ícono de corazón de vacío a sólido */
+.like-btn.liked .far.fa-heart::before {
+    content: "\f004"; /* Corazón sólido */
+    font-weight: 900; /* Esto es clave para que el ícono sea sólido */
+}
+
+/* ===================================================
+   Galería
+   =================================================== */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px 0;
+    justify-items: center;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+/*=======
+/*=====
+/* Contenedor del artículo */
+.blog-post {
+  background: #ffffff;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Títulos */
+.blog-post header h1 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.blog-post h2 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 1.6rem;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: #111;
+  border-left: 4px solid #555;
+  padding-left: 10px;
+}
+
+/* Párrafos y texto */
+.blog-post p {
+  margin-bottom: 16px;
+}
+
+/* Citas */
+.blog-post blockquote {
+  background: #f0f0f0;
+  border-left: 5px solid #888;
+  padding: 15px 20px;
+  margin: 24px 0;
+  font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .blog-post {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+
+  .blog-post header h1 {
+    font-size: 1.9rem;
+  }
+
+  .blog-post h2 {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+/* Responsive para dispositivos móviles */
+@media screen and (max-width: 600px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .contact-email-info {
+        padding: 1.5rem;
+    }
+}
+
+
+
+
+/* Responsivo para el contenido del artículo */
+@media screen and (max-width: 768px) {
+    .blog-post {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .blog-post h1 {
+        font-size: 2.2rem;
+    }
+
+    .blog-post h2 {
+        font-size: 1.6rem;
+    }
+
+    .blog-post p {
+        font-size: 1rem;
+    }
+}
+/* --- Media Queries (Responsive Design) --- */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 60vh;
+        padding: 4rem 1rem;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .post-actions {
+        flex-direction: column;
+    }
+
+    .btn, .like-button {
+        width: 100%;
+    }
+}

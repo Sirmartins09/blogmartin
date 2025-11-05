@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Dean | Mi Blog Personal</title>
+    <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="./index.html" class="logo">
+                <img src="./assets/img/logo-blog.jpg" alt="Logo de Martin Dean">
+            </a>
+            <button class="hamburger" id="hamburger">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./pages/articulos.html">Artículos</a></li>
+                <li><a href="./pages/fotos-videos.html">Galería</a></li>
+                <li><a href="./pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-img">
+                <img src="./assets/img/img-blog.png" alt="Martin Dean">
+            </div>
+            <h1>Martin Dean</h1>
+            <p class="hero-subtitle">"Un blog de alta complejidad. Aquí la incoherencia es una cualidad, la falta de entendimiento un estilo de vida, y el sarcasmo, nuestro único idioma."</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/deenmartinok/" target="_blank" aria-label="Instagram de Martin Dean">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main id="articulos" class="container">
+        <h2 class="section-title">Últimos Artículos</h2>
+        <article class="post" data-id="articulo1">
+            <h3 class="post-title">El Caos Creativo: Mi Primer Artículo</h3>
+            <p class="post-date">Publicado el 14 de agosto de 2025</p>
+            <p class="post-excerpt">"Mi primer artículo, donde todo parece carecer de sentido… y sin embargo, algo intenta nacer."</p>
+            <div class="post-actions">
+                <button class="like-button">Me gusta (0)</button>
+                <a href="./pages/articulo1.html" class="btn btn-primary">Leer más</a>
+            </div>
+        </article>
+
+        <article class="post" data-id="articulo2">
+  <h3 class="post-title">Canal 9: Crónica de una señal que se emite porque sí</h3>
+  <p class="post-date">Publicado el 20 de agosto de 2025</p>
+  <p class="post-excerpt">Una mirada crítica y sarcástica sobre el canal mendocino que se emite por costumbre más que por contenido. Médicos, enfermedades y películas que invitan al alta voluntaria.</p>
+  <div class="post-actions">
+    <button class="like-button">Me gusta (0)</button>
+    <a href="./pages/articulo2.html" class="btn btn-primary">Leer más</a>
+  </div>
+</article>
+
+<article class="post" data-id="articulo3">
+  <h3 class="post-title">Las películas que no sobrevivieron al tiempo</h3>
+  <p class="post-date">Publicado el 24 de agosto de 2025</p>
+  <p class="post-excerpt">Un recorrido nostálgico por el cine doméstico, entre videoclubes, HBO gratis y películas que hoy parecen cascarones vacíos. Pero la emoción, esa sí, sigue intacta.</p>
+  <div class="post-actions">
+    <button class="like-button">Me gusta (0)</button>
+    <a href="../pages/articulo3.html" class="btn btn-primary">Leer más</a>
+  </div>
+</article>
+<article class="post">
+  <h3 class="post-title">Las personas que le dan la espalda a la vida</h3>
+  <p class="post-date" data-id="articulo4">Publicado el 25 de agosto de 2025</p>
+  <p class="post-excerpt">Una reflexión ácida y urbana sobre los peatones que cruzan de espaldas, el tránsito como metáfora existencial y la sociedad que camina sin mirar hacia adelante.</p>
+  <div class="post-actions">
+    <button class="like-button">Me gusta (0)</button>
+    <a href="../pages/articulo4.html" class="btn btn-primary">Leer más</a>
+  </div>
+</article>
+
+<article class="post">
+  <h3 class="post-title">He vuelto</h3>
+  <p class="post-date" data-id="articulo5">Publicado el 4 de noviembre de 2025</p>
+  <p class="post-excerpt">
+    Una crónica sarcástica y melancólica sobre el amor no correspondido, los stickers como nuevo lenguaje del siglo XXI y las historias que, vistas desde afuera, duelen menos.
+  </p>
+  <div class="post-actions">
+    <button class="like-button">Me gusta (0)</button>
+    <a href="../pages/articulo5.html" class="btn btn-primary">Leer más</a>
+  </div>
+</article>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Martin Dean. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Términos de Servicio</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
