@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const post = button.closest('.post');
     const postId = post.getAttribute('data-id');
 
+    // Leer el contador guardado en localStorage
     let likesCount = parseInt(localStorage.getItem(`likes-${postId}`)) || 0;
     button.textContent = `Me gusta (${likesCount})`;
 
@@ -23,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
       likesCount++;
       localStorage.setItem(`likes-${postId}`, likesCount);
       button.textContent = `Me gusta (${likesCount})`;
+
+      // Actualizar publicación con más "me gusta"
+      updateMostLiked(postId, likesCount);
     });
   });
 
@@ -37,4 +41,32 @@ document.addEventListener('DOMContentLoaded', () => {
       button.classList.toggle('liked');
     });
   });
+
+  // 🌟 Mostrar la publicación más votada (si existe)
+  showMostLiked();
 });
+
+
+// =============================
+// FUNCIONES AUXILIARES
+// =============================
+
+// Guarda la publicación con más likes
+function updateMostLiked(postId, likesCount) {
+  const currentBest = JSON.parse(localStorage.getItem('mostLiked')) || { id: null, likes: 0 };
+
+  if (likesCount > currentBest.likes) {
+    localStorage.setItem('mostLiked', JSON.stringify({ id: postId, likes: likesCount }));
+  }
+}
+
+// Muestra visualmente cuál es la más votada
+function showMostLiked() {
+  const mostLiked = JSON.parse(localStorage.getItem('mostLiked'));
+  if (mostLiked && mostLiked.id) {
+    const topPost = document.querySelector(`.post[data-id="${mostLiked.id}"]`);
+    if (topPost) {
+      topPost.classList.add('top-post'); // Podés estilizarla con CSS
+    }
+  }
+}

@@ -614,6 +614,10 @@ h1, p {
   margin: 24px 0;
   font-style: italic;
 }
+.top-post {
+  border: 3px solid gold;
+  box-shadow: 0 0 15px gold;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
